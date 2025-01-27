@@ -1,14 +1,13 @@
 # Tutorial - Deploy DeepSeek-R1-Distill-Qwen-32B using Inferless
-[DeepSeek-R1-Distill-Qwen-32B](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B) is a distilled variant within the DeepSeek-R1 series. The dataset used for training is meticulously curated from the DeepSeek-R1 model, with Qwen2.5-32B serving as the foundational base model. This model has undergone supervised fine-tuning to achieve enhanced performance and efficiency."
+[DeepSeek-R1-Distill-Qwen-32B](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B) is a distilled variant within the DeepSeek-R1 series. The dataset used for training is meticulously curated from the DeepSeek-R1 model, with Qwen2.5-32B serving as the foundational base model. This model has undergone supervised fine-tuning to achieve enhanced performance and efficiency.
 
 ## TL;DR:
 - Deployment of DeepSeek-R1-Distill-Qwen-32B model using [vLLM](https://github.com/vllm-project/vllm).
 - You can expect an average tokens/sec of 21.95 and a latency of 5.88 sec for generating a text of 128 tokens. This setup has an average cold start time of 39.95 sec.
 - Dependencies defined in `inferless-runtime-config.yaml`.
 - GitHub/GitLab template creation with `app.py`, `inferless-runtime-config.yaml` and `inferless.yaml`.
-- Model class in `app.py` with `initialize`, `infer`, and `finalize` functions.
+- `InferlessPythonModel` class in `app.py` with `initialize`, `infer`, and `finalize` functions.
 - Custom runtime creation with necessary system and Python packages.
-- Model import via GitHub with `input_schema.py` file.
 - Recommended GPU: NVIDIA A100 for optimal performance.
 - Custom runtime selection in advanced configuration.
 - Final review and deployment on the Inferless platform.
@@ -113,7 +112,7 @@ curl --location '<your_inference_url>' \
 
 ---
 ## Customizing the Code
-Open the `app.py` file. This contains the main code for inference. It has three main functions, initialize, infer and finalize.
+Open the `app.py` file. This contains the main code for inference. The `InferlessPythonModel` has three main functions, initialize, infer and finalize.
 
 **Initialize** -  This function is executed during the cold start and is used to initialize the model. If you have any custom configurations or settings that need to be applied during the initialization, make sure to add them in this function.
 
