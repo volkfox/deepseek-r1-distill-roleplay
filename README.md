@@ -3,7 +3,7 @@
 
 ## TL;DR:
 - Deployment of DeepSeek-R1-Distill-Qwen-32B model using [vLLM](https://github.com/vllm-project/vllm).
-- You can expect an average tokens/sec of 21.95 and a latency of 5.88 sec for generating a text of 128 tokens. This setup has an average cold start time of 39.95 sec.
+- You can expect an average tokens/sec of `21.95` and a latency of `5.88` sec for generating a text of `128` tokens. This setup has an average cold start time of `39.95` sec.
 - Dependencies defined in `inferless-runtime-config.yaml`.
 - GitHub/GitLab template creation with `app.py`, `inferless-runtime-config.yaml` and `inferless.yaml`.
 - `InferlessPythonModel` class in `app.py` with `initialize`, `infer`, and `finalize` functions.
