@@ -20,7 +20,7 @@ class ResponseObjects(BaseModel):
 
 class InferlessPythonModel:
   def initialize(self):
-    model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
+    model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
     self.llm = LLM(model=model_id,gpu_memory_utilization=0.9,max_model_len=5000)
     self.tokenizer = AutoTokenizer.from_pretrained(model_id)
 
