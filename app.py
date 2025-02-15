@@ -9,7 +9,8 @@ class InferlessPythonModel:
     self.tokenizer = AutoTokenizer.from_pretrained(model_id)
 
   def infer(self, inputs):
-    prompts = inputs["prompt"]
+    user_prompt = inputs["user_prompt"]
+    system_prompt = inputs["system_prompt"]
     temperature = inputs.get("temperature",0.7)
     top_p = inputs.get("top_p",0.1)
     repetition_penalty = inputs.get("repetition_penalty",1.18)
@@ -20,7 +21,7 @@ class InferlessPythonModel:
                                      repetition_penalty=repetition_penalty,
                                      top_k=top_k,max_tokens=max_tokens
                                     )
-    input_text = self.tokenizer.apply_chat_template([{"role": "user", "content": prompts}], tokenize=False)
+    input_text = self.tokenizer.apply_chat_template([{"role": "user", "content": user_prompt}, {"role": "system", "content": system_prompt}], tokenize=False)
     result = self.llm.generate(input_text, sampling_params)
     result_output = [output.outputs[0].text for output in result]
 
