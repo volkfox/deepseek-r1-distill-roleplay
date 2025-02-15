@@ -1,6 +1,6 @@
 version: 1.0.0
 
-name: DeepSeek-R1-Distill-Qwen-32B
+name: deepseek-r1-distill-qwen-32b
 import_source: GIT
 
 # you can choose the options between ONNX, TENSORFLOW, PYTORCH
@@ -40,6 +40,6 @@ optional:
   input_file_name: input.json
   output_file_name: output.json
   runtime_file_name: inferless-runtime-config.yaml
-model_url: https://github.com/inferless/DeepSeek-R1-Distill-Qwen-32B.git
+model_url: https://github.com/inferless/deepseek-r1-distill-qwen-32b.git
 provider: GITHUB
 io_schema: true
