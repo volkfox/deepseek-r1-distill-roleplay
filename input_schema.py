@@ -1,5 +1,11 @@
 INPUT_SCHEMA = {
-    "prompt": {
+    "user_prompt": {
+        'datatype': 'STRING',
+        'required': True,
+        'shape': [1],
+        'example': ["What is deep learning?"]
+    },
+    "system_prompt": {
         'datatype': 'STRING',
         'required': True,
         'shape': [1],
