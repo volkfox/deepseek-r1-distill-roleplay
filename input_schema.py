@@ -9,7 +9,7 @@ INPUT_SCHEMA = {
         'datatype': 'STRING',
         'required': True,
         'shape': [1],
-        'example': ["What is deep learning?"]
+        'example': ["You are a useful assistant"]
     },
     "temperature": {
         'datatype': 'FP32',
