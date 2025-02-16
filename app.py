@@ -21,7 +21,7 @@ class InferlessPythonModel:
                                      repetition_penalty=repetition_penalty,
                                      top_k=top_k,max_tokens=max_tokens
                                     )
-    input_text = self.tokenizer.apply_chat_template([{"role": "user", "content": user_prompt}, {"role": "system", "content": system_prompt}], tokenize=False)
+    input_text = self.tokenizer.apply_chat_template([{"role": "system", "content": system_prompt}, {"role": "user", "content": user_prompt}], tokenize=False)
     result = self.llm.generate(input_text, sampling_params)
     result_output = [output.outputs[0].text for output in result]
 
